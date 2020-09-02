@@ -1,2 +1,2 @@
-# counter-project
-Counter Project for Muon
+# Timer-project
+Timer Project for CRAFT Hospitals by Muon
