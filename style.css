@@ -71,6 +71,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* width: 100%; */
 }
 
 .colon {
@@ -86,7 +87,6 @@ body {
     width: 110px;
     margin-left: 1rem;
     font-size: 5rem;
-    /* display: inline-block; */
 }
 
 .timer-btns {
@@ -96,36 +96,6 @@ body {
 .timer-form-two .timer-btns input {
     padding: 0.5rem 1rem;
     margin: 1rem 0.3rem 0;
-    cursor: pointer;
-}
-
-.timer-form {
-    margin-top: 2rem;
-}
-
-.timer-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.timer-form form input {
-    background-color: none;
-    border: none;
-    padding: 1rem;
-    /* margin-left: 1rem; */
-    font-size: 1rem;
-    /* display: inline-block; */
-}
-
-.timer-btns {
-    margin-top: 1rem;
-}
-
-.timer-form form .timer-btns input {
-    padding: 0.5rem 1rem;
-    margin: 0 0.3rem;
     cursor: pointer;
 }
 
@@ -181,7 +151,44 @@ input[type=button]:focus {
     margin: 0 0.5rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 977px) {
+    .colon {
+        font-size: 4rem;
+        padding-left: 1rem;
+    }
+
+    .timer-form-two form input {
+        width: 90px;
+        font-size: 4rem;
+    }
+}
+
+@media only screen and (max-width: 845px) {
+    .colon {
+        font-size: 4rem;
+        padding-left: 1rem;
+    }
+
+    .timer-form-two form input {
+        width: 80px;
+        font-size: 3.5rem;
+    }
+}
+
+@media only screen and (max-width: 785px) {
+    .colon {
+        font-size: 3rem;
+        padding-left: 1rem;
+    }
+
+    .timer-form-two form input {
+        width: 80px;
+        font-size: 3rem;
+        margin-left: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 725px) {
     .main-wrapper {
         flex-direction: column;
     }
@@ -189,10 +196,38 @@ input[type=button]:focus {
     .timer-section-wrapper {
         width: 100%;
         order: 2;
+        margin-top: 2rem;
     }
 
     .input-section-wrapper {
         width: 100%;
         order: 1;
+    }
+
+    .input-form form input {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .main-wrapper {
+        padding: 0 1rem;
+    }
+
+    .input-form form input {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 363px) {
+    .colon {
+        font-size: 2.5rem;
+        padding-left: 1rem;
+    }
+
+    .timer-form-two form input {
+        width: 60px;
+        font-size: 2.5rem;
+        margin-left: 0.5rem;
     }
 }

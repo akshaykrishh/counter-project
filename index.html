@@ -37,15 +37,19 @@
                 </div>
                 <div class="timer-form-two">
                     <form action="">
-                        <input type="text" value="00">
+                        <input id="hour" type="text" value="00">
                         <span class="colon">:</span>
-                        <input type="text" value="00">
+                        <input id="min" type="text" value="00">
                         <span class="colon">:</span>
-                        <input type="text" value="00">
+                        <input id="sec" type="text" value="00">
                     </form>
+                    <p id="tim"></p>
                     <div class="timer-btns">
-                        <input id="start" type="button" value="Start" />
-                        <input id="reset" type="button" value="Reset" />
+                        <!-- <input id="myDate" type="date"> -->
+                        <div id="clockdiv"></div>
+                        <input id="start" type="button" value="Start"
+                            onclick="window.initializeClock('clockdiv' ,'hour', 'min' ,'sec', 'myDate')" />
+                        <input id="reset" type="button" value="Reset" onclick="resetTimer()" />
                     </div>
                 </div>
             </div>
@@ -56,14 +60,14 @@
             </div>
             <div class="input-form">
                 <form id="detailForm" action="">
-                    <input type="text" placeholder="Patient Name">
-                    <input type="text" placeholder="Sex">
-                    <input type="text" placeholder="Age">
-                    <input type="text" placeholder="Hospital ID">
+                    <input type="text" placeholder="Patient Name" required>
+                    <input type="text" placeholder="Sex" required>
+                    <input type="text" placeholder="Age" required>
+                    <input type="text" placeholder="Hospital ID" required>
                     <input type="text" placeholder="Procedure">
                     <input type="text" placeholder="Surgeon">
                     <input type="text" placeholder="Anaesthetist">
-                    <input type="text" placeholder="Blood Group">
+                    <input type="text" placeholder="Blood Group" required>
                     <input type="text" placeholder="Hemoglobin">
                     <input type="text" placeholder="Allergies">
                     <div class="form-btns">

@@ -51,3 +51,82 @@ $(document).ready(function () {
         $("form input").attr("disabled", false);
     });
 });
+
+function startTimer() {
+    var timerHour = document.getElementById("hour").value
+    var timerMin = document.getElementById("min").value
+    var timerSec = document.getElementById("sec").value
+    var t = timerHour * 60 * 60 * 1000 + timerMin * 60 * 1000 + timerSec * 1000
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+
+    setInterval(function () {
+        document.getElementById("tim").innerHTML = 'hours: ' + hours + '<br>' + 'minutes: ' + minutes + '<br>' + 'seconds: ' + seconds;
+        if (t.total <= 0) {
+            clearInterval(timeinterval);
+        }
+    }, 100);
+    console.log(timerHour, timerMin, timerSec)
+}
+
+window.getTimeRemaining = function (endtime) {
+    // var t = Date.parse(endtime) - (new Date()).getTime();
+    var t = endtime - (new Date()).getTime()
+    console.log(t);
+    console.log((new Date()).getTime())
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    return {
+        'total': t,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+    };
+}
+
+window.initializeClock = function (clockId, hour, min, sec, dateID) {
+    var clock = document.getElementById(clockId);
+    var timerHour = document.getElementById(hour).value
+    var timerMin = document.getElementById(min).value
+    var timerSec = document.getElementById(sec).value
+    var deadline = (new Date()).getTime() + (timerHour * 60 * 60 * 1000 + timerMin * 60 * 1000 + timerSec * 1000)
+    console.log(deadline)
+    // var deadline = document.getElementById(dateID).value;
+    // console.log(deadline)
+    var timeinterval = setInterval(function () {
+        var t = getTimeRemaining(deadline);
+
+        if (document.getElementById("hour").value >= 10) {
+            document.getElementById("hour").value = t.hours;
+        } else {
+            document.getElementById("hour").value = '0' + t.hours;
+        }
+        if (document.getElementById("min").value >= 10) {
+            document.getElementById("min").value = t.minutes;
+        } else {
+            document.getElementById("min").value = '0' + t.minutes;
+
+        }
+        if (document.getElementById("sec").value >= 10) {
+            document.getElementById("sec").value = t.seconds;
+        } else {
+            document.getElementById("sec").value = '0' + t.seconds;
+
+        }
+        clock.innerHTML = 'hours: ' + t.hours + '<br>' + 'minutes: ' + t.minutes + '<br>' + 'seconds: ' + t.seconds;
+        if (t.total <= 0) {
+            clearInterval(timeinterval);
+            document.getElementById("hour").value = "00";
+            document.getElementById("min").value = "00";
+            document.getElementById("sec").value = "00"
+        }
+    }, 100);
+}
+
+function resetTimer() {
+    document.getElementById("hour").value = "00";
+    document.getElementById("min").value = "00";
+    document.getElementById("sec").value = "00"
+}
