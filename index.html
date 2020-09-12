@@ -13,14 +13,14 @@
   </head>
 
   <body>
-    <div class="title">
+    <!-- <div class="title">
       <h1>CRAFT Hospital</h1>
-    </div>
+    </div> -->
 
     <div class="main-wrapper">
       <div class="timer-section-wrapper">
         <div class="timer-section">
-          <h1>Timer!</h1>
+          <!-- <h1>Timer!</h1> -->
           <div class="currentDateTimeWrapper">
             <h3>Current Date & Time</h3>
             <div class="currentDateTime">
@@ -70,16 +70,31 @@
       <div class="input-section-wrapper">
         <div class="input-form">
           <form id="detailForm" action="">
-            <input type="text" placeholder="Patient Name" required />
-            <input type="text" placeholder="Sex" required />
-            <input type="text" placeholder="Age" required />
-            <input type="text" placeholder="Hospital ID" required />
-            <input type="text" placeholder="Procedure" />
-            <input type="text" placeholder="Surgeon" />
-            <input type="text" placeholder="Anaesthetist" />
-            <input type="text" placeholder="Blood Group" required />
-            <input type="text" placeholder="Hemoglobin" />
-            <input type="text" placeholder="Allergies" />
+            <input
+              class="inputfield"
+              type="text"
+              placeholder="Patient Name"
+              required
+            />
+            <input class="inputfield" type="text" placeholder="Sex" required />
+            <input class="inputfield" type="text" placeholder="Age" required />
+            <input
+              class="inputfield"
+              type="text"
+              placeholder="Hospital ID"
+              required
+            />
+            <input class="inputfield" type="text" placeholder="Procedure" />
+            <input class="inputfield" type="text" placeholder="Surgeon" />
+            <input class="inputfield" type="text" placeholder="Anaesthetist" />
+            <input
+              class="inputfield"
+              type="text"
+              placeholder="Blood Group"
+              required
+            />
+            <input class="inputfield" type="text" placeholder="Hemoglobin" />
+            <input class="inputfield" type="text" placeholder="Allergies" />
             <div class="form-btns">
               <button id="form-submit-btn" onclick="formDisable()">
                 Submit
@@ -92,6 +107,10 @@
                 Edit
               </button>
             </div>
+          </form>
+          <form>
+            <input type="text" placeholder="Baby Weight" />
+            <input type="text" placeholder="Baby Sex" />
           </form>
         </div>
       </div>
